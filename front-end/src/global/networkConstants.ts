@@ -34,6 +34,7 @@ import robonomicsLogo from 'src/assets/parachain-logos/robonomics-logo.jpg';
 import shidenLogo from 'src/assets/parachain-logos/shiden-logo.jpg';
 import tanganikaLogo from 'src/assets/parachain-logos/tanganika-logo.png';
 import turingLogo from 'src/assets/parachain-logos/turing-logo.png';
+import varaLogo from 'src/assets/parachain-logos/vara-logo.svg';
 import westendLogo from 'src/assets/parachain-logos/westend-logo.jpg';
 
 import * as types from '../types';
@@ -73,6 +74,7 @@ export const network = {
 	TANGANIKA: 'tanganika',
 	TINKER: 'tinker',
 	TURING: 'turing',
+	VARA: 'vara',
 	WESTEND: 'westend'
 };
 
@@ -106,6 +108,7 @@ export const tokenSymbol = {
 	SBY: 'SBY',
 	SDN: 'SDN',
 	TUR: 'TUR',
+	VARA: 'VARA',
 	WND: 'WND',
 	XRT: 'XRT',
 	UNIT: 'UNIT'
@@ -442,9 +445,19 @@ export const chainProperties: types.ChainPropType = {
 		tokenDecimals: 10,
 		tokenSymbol: tokenSymbol.TUR
 	},
+	[network.VARA]: {
+		blockTime: 2000,
+		category: 'solo',
+		chainId: 137,
+		logo: varaLogo,
+		rpcEndpoint: 'wss://rpc.vara-network.io',
+		ss58Format: 0,
+		tokenDecimals: 10,
+		tokenSymbol: tokenSymbol.VARA
+	},
 	[network.WESTEND]: {
 		blockTime: 6000,
-		category: 'test',
+		category: 'solo',
 		chainId: 0,
 		logo: westendLogo,
 		rpcEndpoint: 'wss://kusama-rpc.polkadot.io',
@@ -474,10 +487,20 @@ export const chainLinks: types.ChainLinksType = {
 		telegram: 'https://t.me/kusamanetworkofficial',
 		twitter: 'https://twitter.com/kusamanetwork',
 		youtube: 'https://www.youtube.com/channel/UCq4MRrQhdoIR0b44GxcCPxw'
+	},
+	[network.VARA]: {
+		blockExplorer: 'https://kusama.subscan.io/',
+		discord: 'https://discord.gg/9AWjTf8wSk',
+		github: 'https://github.com/paritytech/polkadot',
+		homepage: 'https://kusama.network/',
+		reddit: 'https://www.reddit.com/r/Kusama/',
+		telegram: 'https://t.me/kusamanetworkofficial',
+		twitter: 'https://twitter.com/kusamanetwork',
+		youtube: 'https://www.youtube.com/channel/UCq4MRrQhdoIR0b44GxcCPxw'
 	}
 };
 
-export const chainDetails: { [index: string]: string} = {
+export const chainDetails: { [index: string]: string } = {
 	[network.POLKADOT]: 'Polkadot enables scalability by allowing specialized blockchains to communicate with each other in a secure, trust-free environment. Polkadot is built to connect and secure unique blockchains, whether they be public, permission-less networks, private consortium chains, or oracles and other Web3 technologies. It enables an internet where independent blockchains can exchange information under common security guarantees. Polkadot uses a sophisticated governance mechanism that allows it to evolve gracefully overtime at the ultimate behest of its assembled stakeholders. The stated goal is to ensure that the majority of the stake can always command the network.',
 	[network.KUSAMA]: 'Kusama is an early release of Polkadot: a scalable, multichain network for radical innovation. Kusama serves as a proving ground that allows teams and developers to build and deploy a parachain, and experiment with Polkadot’s governance and NPoS functionality in a real environment.'
 };
